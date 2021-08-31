@@ -18,5 +18,19 @@ public class CrabWorld extends World
      */
     private void prepare()
     {
+        lobbi lobbi = new lobbi();
+        addObject(lobbi,185,260);
+        Crab crab = new Crab();
+        addObject(crab,206,115);
+        Worm worm = new Worm();
+        addObject(worm,386,379);
+        Worm worm2 = new Worm();
+        addObject(worm2,177,392);
+        Worm worm3 = new Worm();
+        addObject(worm3,344,177);
+        Worm worm4 = new Worm();
+        addObject(worm4,60,180);
+        Worm worm5 = new Worm();
+        addObject(worm5,262,508);
     }
 }

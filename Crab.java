@@ -27,12 +27,42 @@ public class Crab extends Actor
     // Checks for user key presses so user can turn the crab
     private void checkKeyPress()
     {
-        
+        if(Greenfoot.isKeyDown("right"))
+        {
+            turn(3);
+        }
+        if(Greenfoot.isKeyDown("left"))
+        {
+            turn(-3);
+        }
+        if(Greenfoot.isKeyDown("up"))
+        {
+            Greenfoot.delay(60);
+        }
     }
     //Checks for collisions with other objects
     private void onCollision()
     {
-        
+         if(isTouching(Worm.class))
+        {
+            removeTouching(Worm.class);
+            Greenfoot.playSound("slurp.wav");
+                   
+            // *** Winning the game *******************
+            if(getWorld().getObjects(Worm.class).size()==0)
+            {
+                Greenfoot.setWorld(new WinSplash());
+                Greenfoot.playSound("fanfare.wav");
+                Greenfoot.stop();
+            }
+            // *****************************************
+        }
+        if(isTouching(lobbi.class))
+        {
+            removeTouching(lobbi.class);
+            Greenfoot.playSound("au.wav");
+            Greenfoot.stop();
+        }
     }
 }
 
