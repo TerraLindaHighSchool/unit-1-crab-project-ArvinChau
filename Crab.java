@@ -7,16 +7,18 @@ public class Crab extends Actor
 {
     public void act()
     {
-        move(3);
-         turnAtEdge();
-         checkKeyPress();
-         onCollision();
+        move(0);
+        turnAtEdge();
+        checkKeyPress();
+        onCollision();
+        getY();
+        getX();
     }//This method repeats the following actions public void act()
-    
+
     //moves the crab
-    
+
     //Turns the crab at the edge
-    
+
     private void turnAtEdge()
     {
         if(isAtEdge())
@@ -27,27 +29,35 @@ public class Crab extends Actor
     // Checks for user key presses so user can turn the crab
     private void checkKeyPress()
     {
-        if(Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("D"))
         {
-            turn(3);
+            setLocation(getX() +3,getY());
+            
         }
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("A"))
         {
-            turn(-3);
+            setLocation(getX() -3,getY());
+            
         }
-        if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("W"))
         {
-            Greenfoot.delay(60);
+            setLocation(getX(),getY() - 3);
+            
+        }
+        if(Greenfoot.isKeyDown("S"))
+        {
+            setLocation(getX(),getY() +3);
+            
         }
     }
     //Checks for collisions with other objects
     private void onCollision()
     {
-         if(isTouching(Worm.class))
+        if(isTouching(Worm.class))
         {
             removeTouching(Worm.class);
             Greenfoot.playSound("slurp.wav");
-                   
+
             // *** Winning the game *******************
             if(getWorld().getObjects(Worm.class).size()==0)
             {
@@ -64,6 +74,7 @@ public class Crab extends Actor
             Greenfoot.stop();
         }
     }
+    
 }
 
 
