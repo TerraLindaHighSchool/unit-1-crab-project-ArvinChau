@@ -1,21 +1,24 @@
-import greenfoot.*;  // (Actor, World, Greenfoot, GreenfootImage)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class CrabWorld extends World
+/**
+ * Write a description of class backsplash here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class backsplash extends World
 {
+
     /**
-     * Create the crab world (the beach). Our world has a size 
-     * of 560x560 cells, where every cell is just 1 pixel.
+     * Constructor for objects of class backsplash.
+     * 
      */
-    public CrabWorld() 
-    {
+    public backsplash()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(560, 560, 1);
         prepare();
     }
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     private void prepare()
     {
 
