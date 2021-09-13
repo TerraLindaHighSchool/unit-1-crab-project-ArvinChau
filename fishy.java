@@ -63,7 +63,7 @@ public class fishy extends Actor
         if(isTouching(bee.class))
         {
             removeTouching(bee.class);
-            Greenfoot.playSound("slurp.wav");
+            Greenfoot.playSound("bubbles.wav");
 
             // *** Winning the game *******************
             if(getWorld().getObjects(bee.class).size()==0)
@@ -72,6 +72,7 @@ public class fishy extends Actor
                 Greenfoot.playSound("fanfare.wav");
                 Greenfoot.stop();
             }
+
             // *****************************************
         }
         if(isTouching(snake.class))
