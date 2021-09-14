@@ -79,7 +79,7 @@ public class fishy extends Actor
         {
             removeTouching(snake.class);
             Greenfoot.setWorld(new loser());
-            Greenfoot.playSound("au.wav");
+            Greenfoot.playSound("loser.wav");
             Greenfoot.stop();
         }
     }
